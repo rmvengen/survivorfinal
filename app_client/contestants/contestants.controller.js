@@ -6,7 +6,7 @@
 
     contestantsCtrl.$inject = ['$scope', 'SelectedData', 'SurvivorData'];
 
-    function contestantsCtrl($scope, SelectedData, AirplaneData) {
+    function contestantsCtrl($scope, SelectedData, SurvivorData) {
         // Nasty IE9 redirect hack (not recommended)
         /*
         if (window.location.pathname !== '/') {
@@ -17,15 +17,15 @@
 
         vm.content = "Contestants Data";
 
-        vm.selectedDepartureICAO = "";
+        vm.selectedContestantName = "";
         vm.selectedArrivalICAO = "";
         vm.selectedWeight = "";
 
         //check selected Departure
-        if (SelectedData.selectedDepartureICAO !== null) {
-            vm.selectedDepartureICAO = SelectedData.selectedDepartureICAO;
+        if (SelectedData.selectedContestantName !== null) {
+            vm.selectedContestantName = SelectedData.selectedContestantName;
         }
-
+/*
         //check selected Arrival
         if (SelectedData.selectedArrivalICAO !== null) {
             vm.selectedArrivalICAO = SelectedData.selectedArrivalICAO;
@@ -35,15 +35,15 @@
         if (SelectedData.selectedWeight !== null) {
             vm.selectedWeight = SelectedData.selectedWeight;
         }
-
+*/
         //refactored for Angular 1.6 - removed success/error, used Promises...
-        vm.getLandingDataForWeight = function() {
+        vm.getContestantsDataForWeight = function() {
             
-            AirplaneData.getClimbDataForWeight(vm.selectedWeight.weight)
+            SurvivorData.getContestantsDataForName(vm.selectedContestantsName.contestantName)
                 .then(function(response) {
                     //since find may select many, just return the single object
-                    vm.takeoffData = response.data;
-                    console.log(vm.takeoffData);
+                    vm.contestantsData = response.data;
+                    console.log(vm.contestantsData);
                 })
                 .catch(function(e) {
                     console.log(e);

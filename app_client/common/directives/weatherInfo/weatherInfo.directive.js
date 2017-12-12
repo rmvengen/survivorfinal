@@ -1,7 +1,7 @@
 (function () {
 
   angular
-    .module('airplaneApp')
+    .module('survivorApp')
     .directive('weatherInfo', ['temperatureFilter', 'percentageFilter',
         weatherInfo]);
 

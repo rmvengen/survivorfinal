@@ -9,14 +9,14 @@
                 <div class="col-lg-12">
                     <h1>{{vm.content}}</h1>
                     <div class="container">
-                        <p class="bg-info" ng-bind="vm.selectedContestantName.airportName"></p>
+                        <p class="bg-info" ng-bind="vm.selectedContestantsName.playerName"></p>
                         <p class="bg-info" ng-bind="vm.selectedArrivalICAO.airportName"></p>
                         <p class="bg-info" ng-bind="vm.selectedWeight.weight"></p>
                     </div>
 
                     <div class="container">
-                        <p class="bg-info"><strong>VAPP - Flaps 5</strong>: {{vm.contestantsData.contestantName}} KTS</p>
-                        <p class="bg-info"><strong>VREF - Flaps 10</strong>: {{vm.climbData.vfri10}} KTS</p>
+                        <p class="bg-info"><strong>Contestants Name</strong>: {{vm.contestantsData.playerName}} KTS</p>
+                        <p class="bg-info"><strong>season</strong>: {{vm.contestantsData.seasonName}} KTS</p>
                         <p class="bg-info"><strong>VGA - Flaps 15</strong>: {{vm.climbData.vfri15}} KTS</p>
                     </div>
                     

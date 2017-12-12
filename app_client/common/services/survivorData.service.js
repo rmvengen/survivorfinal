@@ -4,11 +4,11 @@
         .module('survivorApp')
         .service('SurvivorData', survivorData);
 
-    survivoreData.$inject = ['$http'];
+    survivorData.$inject = ['$http'];
 
     function survivorData($http) {
-        var getClimbData = function() {
-            return $http.get('/api/climbData');
+        var getContestantsData = function() {
+            return $http.get('/api/contestantsData');
         }
 
         var getClimbDataForWeight = function(weight) {
@@ -20,7 +20,7 @@
         }        
 
         return {
-            getClimbData: getClimbData,
+            getContestantsData: getContestantsData,
             getClimbDataForWeight : getClimbDataForWeight
         };
     }

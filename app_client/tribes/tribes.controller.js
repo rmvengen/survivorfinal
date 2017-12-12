@@ -2,11 +2,11 @@
 
     angular
         .module('survivorApp')
-        .controller('takeoffCtrl', takeoffCtrl);
+        .controller('tribesCtrl', tribesCtrl);
 
-    takeoffCtrl.$inject = ['$scope', 'SelectedData'];
+    tribesCtrl.$inject = ['$scope', 'SelectedData'];
 
-    function takeoffCtrl($scope, SelectedData) {
+    function tribesCtrl($scope, SelectedData) {
         // Nasty IE9 redirect hack (not recommended)
         /*
         if (window.location.pathname !== '/') {
@@ -15,15 +15,15 @@
         var vm = this;
         console.log(window.location);
 
-        vm.content = "Takeoff Data";
+        vm.content = "Tribes Data";
 
-        vm.selectedDepartureICAO = "";
+        vm.selectedContestantName = "";
         vm.selectedArrivalICAO = "";
         vm.selectedWeight = "";
 
         //check selected Departure
-        if (SelectedData.selectedDepartureICAO !== null) {
-            vm.selectedDepartureICAO = SelectedData.selectedDepartureICAO;
+        if (SelectedData.selectedContestantName !== null) {
+            vm.selectedContestantName = SelectedData.selectedContestantName;
         }
 
         //check selected Arrival

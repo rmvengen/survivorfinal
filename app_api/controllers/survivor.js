@@ -9,18 +9,18 @@ var sendJSONresponse = function(res, status, content)
 }
 
 /* GET all AirportData records */
-module.exports.survivorDataReadAll = function(req, res)
+module.exports.playerDataReadAll = function(req, res)
 {
-  console.log("Finding all Airport Data Records", req);
+  console.log("Finding all player Data Records", req);
   
-  TribesData
+  PlayerData
     .find({})
-    .exec(function(err, survivorData){
+    .exec(function(err, playerData){
       if(err){
         console.log(err);
         sendJSONresponse(res, 404, err);
       }
-      console.log(survivorData);
-      sendJSONresponse(res, 200, survivorData);
+      console.log(playerData);
+      sendJSONresponse(res, 200, playerData);
     });
 }

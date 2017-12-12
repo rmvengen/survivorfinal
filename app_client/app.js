@@ -4,7 +4,7 @@
 
   function config ($routeProvider, $locationProvider) {
     
-    console.log("BEING AIRPLANE SERVICES APP - MEAN STACK DRIVEN");
+    console.log("Survivor Castaway APP - MEAN STACK DRIVEN");
     
     $routeProvider
       .when('/', {
@@ -12,9 +12,9 @@
         controller: 'homeCtrl',
         controllerAs: 'vm'
       })
-      .when('/takeoff/', {
-        templateUrl: '/takeoff/takeoff.view.html',
-        controller: 'takeoffCtrl',
+      .when('/tribes/', {
+        templateUrl: '/tribes/tribes.view.html',
+        controller: 'tribesCtrl',
         controllerAs: 'vm'
       })
       .when('/contestants/', {
@@ -22,14 +22,14 @@
         controller: 'contestantsCtrl',
         controllerAs: 'vm'
       })
-      .when('/climb/', {
-        templateUrl: '/climb/climb.view.html',
-        controller: 'climbCtrl',
+      .when('/seasons/', {
+        templateUrl: '/seasons/seasons.view.html',
+        controller: 'seasonsCtrl',
         controllerAs: 'vm'
       })
-      .when('/airport/', {
-        templateUrl: '/airport/airport.view.html',
-        controller: 'airportCtrl',
+      .when('/player/', {
+        templateUrl: '/player/player.view.html',
+        controller: 'playerCtrl',
         controllerAs: 'vm'
       })
       .when('/weather/', {

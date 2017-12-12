@@ -2,11 +2,11 @@
 
     angular
         .module('survivorApp')
-        .controller('climbCtrl', climbCtrl);
+        .controller('seasonsCtrl', seasonsCtrl);
 
-    climbCtrl.$inject = ['$scope', 'SurvivorData', 'SelectedData'];
+    seasonsCtrl.$inject = ['$scope', 'SurvivorData', 'SelectedData'];
 
-    function climbCtrl($scope, AirplaneData, SelectedData) {
+    function seasonsCtrl($scope, SurvivorData, SelectedData) {
         // Nasty IE9 redirect hack (not recommended)
         /*
         if (window.location.pathname !== '/') {
@@ -15,15 +15,15 @@
         var vm = this;
         console.log(window.location);
 
-        vm.content = "Climb Data";
+        vm.content = "Seasons Data";
 
-        vm.selectedDepartureICAO = "";
+        vm.selectedSeasonName = "";
         vm.selectedArrivalICAO = "";
         vm.selectedWeight = "";
 
         //check selected Departure
-        if (SelectedData.selectedDepartureICAO !== null) {
-            vm.selectedDepartureICAO = SelectedData.selectedDepartureICAO;
+        if (SelectedData.selectedSeasonName !== null) {
+            vm.selectedSeasonName = SelectedData.selectedSeasonName;
         }
 
         //check selected Arrival
@@ -37,23 +37,23 @@
         }
 
         //refactored for Angular 1.6 - removed success/error, used Promises...
-        vm.getClimbDataForWeight = function() {
+        vm.getSeasonsDataForSeasonName = function() {
             
-            AirplaneData.getClimbDataForWeight(vm.selectedWeight.weight)
+            SurvivorData.getSeasonsDataForSeasonName(vm.selectedSeasonName.seasonName)
                 .then(function(response) {
                     //since find may select many, just return the single object
-                    vm.climbData = response.data[0];
-                    console.log(vm.climbData);
+                    vm.seasonsData = response.data[0];
+                    console.log(vm.seasonsData);
                 })
                 .catch(function(e) {
                     console.log(e);
                 });            
         }
 
-        console.log("IN CLIMB DATA FOR WEIGHT: " + vm.selectedWeight.weight);        
+        console.log("IN Season DATA FOR seasonName: " + vm.selectedSeasonsName.seasonName);        
         
         //call services
-        vm.getClimbDataForWeight();
+        vm.getSeasonsDataForSeasonName();
     }
 
 })();

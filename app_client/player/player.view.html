@@ -10,19 +10,20 @@
                     <h1>{{vm.content}}</h1>
                         <form novalidate>
                             <div class="form-group">
-                                <label for="selectDepartureICAO">Departure</label>
-                                <select id="selectDepartureICAO" 
+                                <label for="selectedContestantName">Name</label>
+                                <!--<select id="selectedContestantName" 
                                         class="form-control" 
-                                        ng-model="vm.selectedDepartureICAO" 
-                                        ng-options="apt.airportName for apt in vm.airports"></select>
-                                <p class="bg-info" ng-bind="vm.selectedDepartureICAO.airportName"></p>
+                                        ng-model="vm.selectedContestantName" 
+                                        ng-options="player.playerName for apt in vm.players"></select>-->
+                                    <input type="contestantName" class="form-control" id = "contestantName" placeholder= "Enter Contestant Name" name="contestantName">    
+                                <p class="bg-info" ng-bind="vm.selectedContestantsName.playerName"></p>
                             </div>
                             <div class="form-group">
-                                <label for="selectArrivalICAO">Arrival</label>
-                                <select id="selectArrivalICAO" 
+                                <label for="selectSeasonName">Season</label>
+                                <select id="selectSeasonName" 
                                         class="form-control" 
-                                        ng-model="vm.selectedArrivalICAO" 
-                                        ng-options="apt.airportName for apt in vm.airports"></select>
+                                        ng-model="vm.selectedSeasonName" 
+                                        ng-options="player.seasonName for player in vm.seasonsName"></select>
                                 <p class="bg-info" ng-bind="vm.selectedArrivalICAO.airportName"></p>
                             </div>
                             <div class="form-group">

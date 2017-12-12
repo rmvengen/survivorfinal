@@ -7,9 +7,9 @@
   //selectedData.$inject = ['$http'];
   function selectedData () {
       return {
-          selectedDepartureICAO : '',
-          selectedArrivalICAO : '',
-          selectedWeight : ''
+          selectedContestantName : '',
+          selectedSeasonName : '',
+          selectedAge : ''
       };
   }
 

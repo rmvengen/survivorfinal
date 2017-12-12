@@ -15,25 +15,25 @@
     var vm = this;
     console.log(window.location);
     
-    vm.content = "Airplane Data";
+    vm.content = "Survivor Data";
     
-    vm.selectedDepartureICAO = "";
-    vm.selectedArrivalICAO = "";
-    vm.selectedWeight = "";
+    vm.selectedContestantName = "";
+    vm.selectedSeasonName = "";
+    vm.selectedAge = "";
     
     //check selected Departure
     if(SelectedData.selectedDepartureICAO !== null){
-      vm.selectedDepartureICAO = SelectedData.selectedDepartureICAO;
+      vm.selectedContestantName = SelectedData.selectedContestantName;
     }
     
     //check selected Arrival
-    if(SelectedData.selectedArrivalICAO !== null){
-      vm.selectedArrivalICAO = SelectedData.selectedArrivalICAO;
+    if(SelectedData.selectedSeasonName !== null){
+      vm.selectedSeasonName = SelectedData.selectedSeasonName;
     }
     
     //check selected weight
-    if(SelectedData.selectedWeight !== null){
-      vm.selectedWeight = SelectedData.selectedWeight;
+    if(SelectedData.selectedAge !== null){
+      vm.selectedAge = SelectedData.selectedAge;
     }      
   }
 
