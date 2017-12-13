@@ -32,9 +32,9 @@
         controller: 'playerCtrl',
         controllerAs: 'vm'
       })
-      .when('/weather/', {
-        templateUrl: '/weather/weather.view.html',
-        controller: 'weatherCtrl',
+      .when('/omdb/', {
+        templateUrl: '/omdb/omdb.view.html',
+        controller: 'omdbCtrl',
         controllerAs: 'vm'
       })      
       .otherwise({redirectTo: '/'});

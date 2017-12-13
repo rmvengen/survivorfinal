@@ -2,16 +2,16 @@
 
     angular
         .module('survivorApp')
-        .controller('weatherCtrl', weatherCtrl);
+        .controller('omdbCtrl', omdbCtrl);
 
-    weatherCtrl.$inject = ['$scope', 'SelectedData', 'DarkskyWeather'];
+    omdbCtrl.$inject = ['$scope', 'SelectedData', 'onlinemovieDatabase'];
 
-    function weatherCtrl($scope, SelectedData, DarkskyWeather) {
+    function omdbCtrl($scope, SelectedData, onlinemovieDatabase) {
 
         var vm = this;
         console.log(window.location);
 
-        vm.content = "Weather";
+        vm.content = "Online Movie Database";
 
         vm.selectedDepartureICAO = "";
         vm.selectedArrivalICAO = "";
@@ -40,7 +40,7 @@
             var lon = vm.selectedDepartureICAO.airportLon;
             console.log(lon);            
 
-            DarkskyWeather.getWeather(lat, lon)
+            onlinemovieDatabase.getOMdb(lat, lon)
                 .then(function(response) {
                     vm.departureWeather = response.data;
                     console.log(vm.departureWeather);
@@ -57,7 +57,7 @@
             var lon = vm.selectedArrivalICAO.airportLon;
 
             //refactored for Angular 1.6 - removed success/error, used Promises...
-            DarkskyWeather.getWeather(lat, lon)
+            onlinemovieDatabase.getOmdb(lat, lon)
                 .then(function(response) {
                     vm.arrivalWeather = response.data;
                     console.log(vm.arrivalWeather);
