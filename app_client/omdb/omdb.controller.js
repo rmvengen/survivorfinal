@@ -13,13 +13,13 @@
 
         vm.content = "Online Movie Database";
 
-        vm.selectedDepartureICAO = "";
+        vm.selectedTitle = "";
         vm.selectedArrivalICAO = "";
         vm.selectedWeight = "";
 
         //check selected Departure
-        if (SelectedData.selectedDepartureICAO !== null) {
-            vm.selectedDepartureICAO = SelectedData.selectedDepartureICAO;
+        if (SelectedData.selectedTitle !== null) {
+            vm.selectedTitle = SelectedData.selectedTitle;
         }
         
         //check selected Arrival
@@ -35,12 +35,12 @@
         //refactored for Angular 1.6 - removed success/error, used Promises...
         vm.getDepartureWeather = function() {
             
-            var lat = vm.selectedDepartureICAO.airportLat;
-            console.log(lat);
-            var lon = vm.selectedDepartureICAO.airportLon;
-            console.log(lon);            
+            var t = vm.selectedTitle;
+            console.log(t);
+            var y = vm.selectedYear;
+            console.log(y);            
 
-            onlinemovieDatabase.getOMdb(lat, lon)
+            onlinemovieDatabase.getOMdb(t, y)
                 .then(function(response) {
                     vm.departureWeather = response.data;
                     console.log(vm.departureWeather);

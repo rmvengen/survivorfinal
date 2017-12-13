@@ -18,13 +18,31 @@
                                     <input type="contestantName" class="form-control" id = "contestantName" placeholder= "Enter Contestant Name" name="contestantName">    
                                 <p class="bg-info" ng-bind="vm.selectedContestantsName.playerName"></p>
                             </div>
+                            <!--
+                            <div class="form-group">
+                                <label for="selectContestantName">Contestant</label>
+                                <select id="selectContestantName" 
+                                        class="form-control" 
+                                        ng-model="vm.selectedContestantName" 
+                                        ng-options="apt.contestantname for apt in vm.contestantdata"></select>
+                                <p class="bg-info" ng-bind="vm.selectedContestantName.survivorName"></p>
+                            </div>
+                            -->
+                            <div class="form-group">
+                                <label for="selectContestantName">Contestant Name</label>
+                                <select id="selectContestantName" 
+                                        class="form-control" 
+                                        ng-model="vm.selectedContestantName" 
+                                        ng-options="contestant.contestantName for contestant in vm.contestantsData"></select>
+                                <p class="bg-info" ng-bind="vm.selectedContestantName.contestantName"></p>
+                            </div>   
                             <div class="form-group">
                                 <label for="selectSeasonName">Season</label>
                                 <select id="selectSeasonName" 
                                         class="form-control" 
                                         ng-model="vm.selectedSeasonName" 
-                                        ng-options="player.seasonName for player in vm.seasonsName"></select>
-                                <p class="bg-info" ng-bind="vm.selectedArrivalICAO.airportName"></p>
+                                        ng-options="seasons.seasonName for seasons in vm.seasonsData"></select>
+                                <p class="bg-info" ng-bind="vm.selectedSeasonName.seasonName"></p>
                             </div>
                             <div class="form-group">
                                 <label for="selectWeight">Aircraft Weight (KG)</label>

@@ -37,7 +37,7 @@
         }
 */
         //refactored for Angular 1.6 - removed success/error, used Promises...
-        vm.getContestantsDataForWeight = function() {
+        vm.getContestantsDataForName = function() {
             
             SurvivorData.getContestantsDataForName(vm.selectedContestantsName.contestantName)
                 .then(function(response) {

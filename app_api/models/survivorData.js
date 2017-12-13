@@ -10,10 +10,10 @@ var RewardSchema = new mongoose.Schema({
     mergeTribe: String
 })
 
-var TribesSchema = new mongoose.Schema({
+var SurvivorSchema = new mongoose.Schema({
 	seasonName: String,
 	contestantName: String,
 	tribe: [RewardSchema]
 });
 
-mongoose.model('TribesData', TribesSchema, 'TribesData');
+mongoose.model('SurvivorData', SurvivorSchema, 'PlayerData');

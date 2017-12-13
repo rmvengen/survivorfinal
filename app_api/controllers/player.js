@@ -1,5 +1,5 @@
 var mongoose            = require('mongoose');
-var TribesData           = mongoose.model('TribesData');
+var PlayerData           = mongoose.model('SurvivorData');
 var ContestantsData     = mongoose.model('ContestantsData');
 var SeasonsData         = mongoose.model('SeasonsData');
 
@@ -25,6 +25,21 @@ module.exports.contestantsDataReadAll = function(req, res) {
             console.log(contestantsData);
             sendJSONresponse(res, 200, contestantsData);
         });
+}
+module.exports.playerFindOneContestant = function(req, res, next){
+    var contestantName = req.params.contestantName;
+    console.log("in controller");
+    
+    ContestantsData.find({"contestantName": contestantName},{_id:0}, function(err, contestantsdatas){
+        if(err){
+            console.log("Error in controller");
+            console.log(err);
+            sendJSONresponse(res, 404, err);
+        }else{
+            console.log("right spot of controller");
+            sendJSONresponse((res,200,contestantsdatas))
+        }
+    })
 }
 
 /* GET ClimbData by weight */

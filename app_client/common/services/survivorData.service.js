@@ -8,7 +8,7 @@
 
     function survivorData($http) {
         var getContestantsData = function() {
-            return $http.get('/api/contestantsData');
+            return $http.get('/api/contestants');
         }
 
         var getClimbDataForWeight = function(contestantName) {

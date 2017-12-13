@@ -9,15 +9,15 @@
                 <div class="col-lg-12">
                     <h1>{{vm.content}}</h1>
                     <div class="container">
-                        <p class="bg-info" ng-bind="vm.selectedContestantsName.playerName"></p>
-                        <p class="bg-info" ng-bind="vm.selectedArrivalICAO.airportName"></p>
-                        <p class="bg-info" ng-bind="vm.selectedWeight.weight"></p>
+                        <!--<p class="bg-info" ng-bind="vm.selectedContestantsName.playerName"></p>-->
+                       <!-- <p class="bg-info" ng-bind="vm.selectedArrivalICAO.airportName"></p>-->
+                       <!-- <p class="bg-info" ng-bind="vm.selectedWeight.weight"></p>-->
                     </div>
 
                     <div class="container">
-                        <p class="bg-info"><strong>Contestants Name</strong>: {{vm.contestantsData.playerName}} KTS</p>
-                        <p class="bg-info"><strong>season</strong>: {{vm.contestantsData.seasonName}} KTS</p>
-                        <p class="bg-info"><strong>VGA - Flaps 15</strong>: {{vm.climbData.vfri15}} KTS</p>
+                        <p class="bg-info"><strong>Contestants Name</strong>: {{vm.playerData[0].contestantName}} </p>
+                        <!--<p class="bg-info"><strong>season</strong>: {{vm.contestantsData.seasonName}} KTS</p>-->
+                        <!--<p class="bg-info"><strong>VGA - Flaps 15</strong>: {{vm.climbData.vfri15}} KTS</p>-->
                     </div>
                     
                     <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle" ng-click="toggleMenu">Toggle Menu</a>-->

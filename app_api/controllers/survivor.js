@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var TribesData = mongoose.model('TribesData');
+var SurvivorData = mongoose.model('SurvivorData');
 
 //utility method for the module
 var sendJSONresponse = function(res, status, content)
@@ -9,11 +9,11 @@ var sendJSONresponse = function(res, status, content)
 }
 
 /* GET all AirportData records */
-module.exports.playerDataReadAll = function(req, res)
+module.exports.survivorDataReadAll = function(req, res)
 {
   console.log("Finding all player Data Records", req);
   
-  PlayerData
+  SurvivorData
     .find({})
     .exec(function(err, playerData){
       if(err){
