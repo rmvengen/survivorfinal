@@ -11,7 +11,7 @@ var sendJSONresponse = function(res, status, content) {
 }
 
 //// CLIMB DATA ////////////////////////////////////////////////////////////////
-/* GET all ClimbData records */
+/* GET all Contestants records */
 module.exports.contestantsDataReadAll = function(req, res) {
     console.log("Finding all Contestants Data Records", req);
 
@@ -42,7 +42,25 @@ module.exports.playerFindOneContestant = function(req, res, next){
     })
 }
 
+
+//////////// GET Seasons
+module.exports.seasonsDataReadAll = function(req, res) {
+    console.log("Finding all Seasons Data Records", req);
+
+    SeasonsData
+        .find({})
+        .exec(function(err, seasonsData) {
+            if (err) {
+                console.log(err);
+                sendJSONresponse(res, 404, err);
+            }
+            console.log(seasonsData);
+            sendJSONresponse(res, 200, seasonsData);
+        });
+}
+
 /* GET ClimbData by weight */
+
 module.exports.contestantsDataReadOne = function(req, res) {
     console.log('Finding Contestants Data Record', req.params);
     if (req.params && req.params.contestantName) {
@@ -76,6 +94,7 @@ module.exports.contestantsDataReadOne = function(req, res) {
 
 //// CLIMB DATA ////////////////////////////////////////////////////////////////
 /* GET all ClimbData records */
+
 module.exports.tribesDataReadAll = function(req, res) {
     console.log("Finding all tribes Data Records", req);
 
@@ -92,6 +111,7 @@ module.exports.tribesDataReadAll = function(req, res) {
 }
 
 /* GET ClimbData by weight */
+
 module.exports.tribeDataReadOne = function(req, res) {
     console.log('Finding Tribes Data Record', req.params);
     if (req.params && req.params.contestantName) {
@@ -158,8 +178,9 @@ module.exports.seasonsDataReadOne = function(req, res) {
     }
 };
 
-
+/*
 /* GET all ClimbData records */
+/*
 module.exports.seasonsDataReadAll = function(req, res) {
     console.log("Finding all Landing Data Records", req);
 
@@ -174,3 +195,4 @@ module.exports.seasonsDataReadAll = function(req, res) {
             sendJSONresponse(res, 200, TribesData);
         });
 }
+*/

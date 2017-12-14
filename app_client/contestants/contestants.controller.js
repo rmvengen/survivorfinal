@@ -18,8 +18,8 @@
         vm.content = "Contestants Data";
 
         vm.selectedContestantName = "";
-        vm.selectedArrivalICAO = "";
-        vm.selectedWeight = "";
+      //  vm.selectedArrivalICAO = "";
+      //  vm.selectedWeight = "";
 
         //check selected Departure
         if (SelectedData.selectedContestantName !== null) {

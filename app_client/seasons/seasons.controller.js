@@ -1,10 +1,11 @@
+
 (function() {
 
     angular
         .module('survivorApp')
         .controller('seasonsCtrl', seasonsCtrl);
 
-    seasonsCtrl.$inject = ['$scope', 'SurvivorData', 'SelectedData'];
+    seasonsCtrl.$inject = ['$scope', 'SelectedData', 'SurvivorData'];
 
     function seasonsCtrl($scope, SurvivorData, SelectedData) {
         // Nasty IE9 redirect hack (not recommended)
@@ -18,14 +19,14 @@
         vm.content = "Seasons Data";
 
         vm.selectedSeasonName = "";
-        vm.selectedArrivalICAO = "";
-        vm.selectedWeight = "";
+        //vm.selectedArrivalICAO = "";
+        //vm.selectedWeight = "";
 
         //check selected Departure
         if (SelectedData.selectedSeasonName !== null) {
             vm.selectedSeasonName = SelectedData.selectedSeasonName;
         }
-
+/*
         //check selected Arrival
         if (SelectedData.selectedArrivalICAO !== null) {
             vm.selectedArrivalICAO = SelectedData.selectedArrivalICAO;
@@ -35,11 +36,11 @@
         if (SelectedData.selectedWeight !== null) {
             vm.selectedWeight = SelectedData.selectedWeight;
         }
-
+*/
         //refactored for Angular 1.6 - removed success/error, used Promises...
-        vm.getSeasonsDataForSeasonName = function() {
+        vm.getSeasonsDataForName = function() {
             
-            SurvivorData.getSeasonsDataForSeasonName(vm.selectedSeasonName.seasonName)
+            SurvivorData.getSeasonsDataForName(vm.selectedSeasonName.seasonName)
                 .then(function(response) {
                     //since find may select many, just return the single object
                     vm.seasonsData = response.data[0];
@@ -49,11 +50,13 @@
                     console.log(e);
                 });            
         }
-
-        console.log("IN Season DATA FOR seasonName: " + vm.selectedSeasonsName.seasonName);        
+        
+       //console.log("IN season DATA FOR WEIGHT: " + vm.selectedSeasonName.seasonName);        
         
         //call services
-        vm.getSeasonsDataForSeasonName();
+        //vm.getSeasonsData();
+        //vm.getSeasonsDataForName();
+
     }
 
 })();

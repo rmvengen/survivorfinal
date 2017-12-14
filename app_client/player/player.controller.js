@@ -194,24 +194,24 @@
       vm.selectedWeight = SelectedData.selectedWeight;
     }    
 
-   /* //refactored for Angular 1.6 - removed success/error, used Promises...
-    vm.getSurvivorData = function() {
-      SurvivorData.getSurvivors()
-        .then(function(response) {
-          vm.survivors = response.data;
-          console.log(response);
-        })
-        .catch(function(e) {
-          console.log(e);
-        });
-    }
-*/
+   
     //refactored for Angular 1.6 - removed success/error, used Promises...
     vm.getContestantsData = function() {
       SurvivorData.getContestantsData()
         .then(function(response) {
           vm.contestantsData = response.data;
           console.log("TESTING:" + vm.contestantsData);
+        })
+        .catch(function(e) {
+          console.log(e);
+        });
+    }
+ //refactored for Angular 1.6 - removed success/error, used Promises...
+    vm.getSeasonsData = function() {
+      SurvivorData.getSeasonsData()
+        .then(function(response) {
+          vm.seasonsData = response.data;
+          console.log(vm.seasonsData);
         })
         .catch(function(e) {
           console.log(e);
@@ -231,7 +231,7 @@
     vm.clearSelectedData = function(){
       
       vm.selectedContestantName = null;
-      vm.selectedDepartureICAO = null;
+      vm.selectedSeasonName = null;
       vm.selectedWeight = null;
     }
     
@@ -241,8 +241,8 @@
         return vm.selectedContestantName;    
       }, 
       function (newValue, oldValue) {
-        console.log(oldValue);
-        console.log(newValue);
+        console.log("This is old value" + oldValue);
+        console.log("This is new value" +newValue);
         if (newValue.icao !== oldValue.icao){
           SelectedData.selectedContestantName = newValue;
         } 
@@ -259,12 +259,12 @@
         console.log(oldValue);
         console.log(newValue);
         if (newValue.icao !== oldValue.icao){
-          SelectedData.selectedASeasonName = newValue;
+          SelectedData.selectedSeasonName = newValue;
         } 
       }, 
       true
     );
-    
+    /*
     //saved weight
     $scope.$watch(
       function(){
@@ -279,9 +279,10 @@
       }, 
       true
     );    
-
+*/
     //call services
     vm.getContestantsData();
+    vm.getSeasonsData();
   //  vm.getClimbData();
 
   }

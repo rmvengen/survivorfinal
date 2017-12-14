@@ -22,7 +22,7 @@
     vm.selectedAge = "";
     
     //check selected Departure
-    if(SelectedData.selectedDepartureICAO !== null){
+    if(SelectedData.selectedContestantName !== null){
       vm.selectedContestantName = SelectedData.selectedContestantName;
     }
     

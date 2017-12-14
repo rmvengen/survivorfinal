@@ -11,8 +11,8 @@
             return $http.get('/api/contestants');
         }
 
-        var getClimbDataForWeight = function(contestantName) {
-            return $http.get('/api/seasonsData/' + contestantName);
+        var getSeasonsData = function() {
+            return $http.get('/api/seasons/');
         }
         
         var getLandingDataForWeight = function(weight) {
@@ -21,7 +21,7 @@
 
         return {
             getContestantsData: getContestantsData,
-            getClimbDataForWeight : getClimbDataForWeight
+            getSeasonsData : getSeasonsData
         };
     }
 })();
