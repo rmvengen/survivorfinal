@@ -268,21 +268,23 @@
     //saved weight
     $scope.$watch(
       function(){
-        return vm.selectedWeight;
+        return vm.selectedOriginalTribe;
       }, 
       function (newValue, oldValue) {
         console.log(oldValue);
         console.log(newValue);
         if (newValue.weight !== oldValue.weight){
-          SelectedData.selectedWeight = newValue;
+          SelectedData.selectedOriginalTribe = newValue;
         } 
       }, 
       true
     );    
 */
     //call services
+    //vm.get
     vm.getContestantsData();
     vm.getSeasonsData();
+   // vm.getTribesData();
   //  vm.getClimbData();
 
   }

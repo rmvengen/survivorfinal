@@ -10,13 +10,13 @@
                     <h1>{{vm.content}}</h1>
                     <div class="container">
                          <p class="bg-info" ng-bind="vm.selectedContestantName.contestants"></p>
-                        <p class="bg-info" ng-bind="vm.selectedSeasonName.seasonName"></p>
+                        <p class="bg-info" ng-bind="vm.selectedContestantName.seasonName"></p>
                        <!-- <p class="bg-info" ng-bind="vm.selectedWeight.weight"></p>-->
                     </div>
 
                     <div class="container">
                         <p class="bg-info"><strong>Contestants Name</strong>: {{vm.contestantsData[0].contestantName}} </p>
-                        <p class="bg-info"><strong>season</strong>: {{vm.seasonsData.seasonName}} KTS</p>
+                        <p class="bg-info"><strong>season</strong>: {{vm.selectedContestantName.seasonName}} KTS</p>
                         <!--<p class="bg-info"><strong>VGA - Flaps 15</strong>: {{vm.climbData.vfri15}} KTS</p>-->
                     </div>
                     

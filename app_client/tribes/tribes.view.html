@@ -8,12 +8,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>{{vm.content}}</h1>
-                    <p class="bg-info" ng-bind="vm.selectedContestantName.playerName"></p>
-                    <p class="bg-info" ng-bind="vm.selectedArrivalICAO.airportName"></p>
+                    <p class="bg-info" ng-bind="vm.selectedContestantName.contestant"></p>
+                    <p class="bg-info" ng-bind="vm.selectedSeasonName.survivorName"></p>
                     <p class="bg-info" ng-bind="vm.selectedWeight.weight"></p>
                     
                      <div class="container">
-                        <p class="bg-info"><strong>Contestants Name</strong>: {{vm.contestantName.playerName}} KTS</p>
+                        <p class="bg-info"><strong>Contestants Name</strong>: {{vm.contestantsData.contestantName}} KTS</p>
                         <p class="bg-info"><strong>season</strong>: {{vm.contestantsData.seasonName}} KTS</p>
                         <p class="bg-info"><strong>VGA - Flaps 15</strong>: {{vm.climbData.vfri15}} KTS</p>
                     </div>

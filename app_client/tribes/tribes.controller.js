@@ -18,7 +18,7 @@
         vm.content = "Tribes Data";
 
         vm.selectedContestantName = "";
-        vm.selectedArrivalICAO = "";
+        vm.selectedSeasonName = "";
         vm.selectedWeight = "";
 
         //check selected Departure
@@ -27,8 +27,8 @@
         }
 
         //check selected Arrival
-        if (SelectedData.selectedArrivalICAO !== null) {
-            vm.selectedArrivalICAO = SelectedData.selectedArrivalICAO;
+        if (SelectedData.selectedSeasonName !== null) {
+            vm.selectedSeasonName = SelectedData.selectedSeasonName;
         }
 
         //check selected weight

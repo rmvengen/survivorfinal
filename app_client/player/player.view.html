@@ -15,9 +15,11 @@
                                         class="form-control" 
                                         ng-model="vm.selectedContestantName" 
                                         ng-options="player.playerName for apt in vm.players"></select>-->
+                                        <!--
                                     <input type="contestantName" class="form-control" id = "contestantName" placeholder= "Enter Contestant Name" name="contestantName">    
                                 <p class="bg-info" ng-bind="vm.selectedContestantsName.playerName"></p>
                             </div>
+                            -->
                             <!--
                             <div class="form-group">
                                 <label for="selectContestantName">Contestant</label>
@@ -36,6 +38,9 @@
                                         ng-options="contestant.contestantName for contestant in vm.contestantsData"></select>
                                 <p class="bg-info" ng-bind="vm.selectedContestantName.contestantName"></p>
                             </div>   
+                            <p> This is season {{vm.selectedContestantName.seasonName}}</p>
+                            <p>{{vm.selectedContestantName.Age}} Age </p>
+                            <p>{{vm.selectedContestantName.finish}} Finish</p>
                             
                             <div class="form-group">
                                 <label for="selectSeasonName">Season Name</label>
@@ -45,16 +50,20 @@
                                         ng-options="season.seasonName for season in vm.seasonsData"></select>
                                 <p class="bg-info" ng-bind="vm.selectedSeasonName.seasonName"></p>
                             </div>   
-                            <!--
+                            <p> SeasonNumber: {{vm.selectedSeasonName.seasonNumber}}</p>
+                            <p>Location of Season: {{vm.selectedSeasonName.seasonLocation}}</p>
+                            <p>Year of Season: {{vm.selectedSeasonName.yearOfSeason}}</p>
+                            <p>Month of Season: {{vm.selectedSeasonName.monthOfSeason}}</p>
+                            
                             <div class="form-group">
-                                <label for="selectSeasonName">Season</label>
-                                <select id="selectSeasonName" 
+                                <label for="selectTribeName">Tribe</label>
+                                <select id="selectTribeName" 
                                         class="form-control" 
-                                        ng-model="vm.selectedSeasonName" 
-                                        ng-options="seasons.seasonName for seasons in vm.seasonsData"></select>
-                                <p class="bg-info" ng-bind="vm.selectedSeasonName.seasonName"></p>
+                                        ng-model="vm.selectedOriginalTribe" 
+                                        ng-options="tribes.originalTribe for seasons in vm.tribesData"></select>
+                                <p class="bg-info" ng-bind="vm.selectedOriginalTribe.originalTribe"></p>
                             </div>
-                            -->
+                        <!--
                             <div class="form-group">
                                 <label for="selectWeight">Aircraft Weight (KG)</label>
                                 <select id="selectWeight" 
@@ -62,7 +71,8 @@
                                         ng-model="vm.selectedWeight" 
                                         ng-options="climb.weight for climb in vm.climbData"></select>
                                 <p class="bg-info" ng-bind="vm.selectedWeight.weight"></p>
-                            </div>                             
+                            </div>    
+                            -->
                         </form>
                     
                     <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle" ng-click="toggleMenu">Toggle Menu</a>-->
